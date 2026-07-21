@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#9beb83;
+}
+
+.container{
+    width:1200px;
+    margin:20px auto;
+    background:#ffffff;
+    border:1px solid #ccc;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    border-bottom:1px solid #ccc;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+nav ul li{
+    position:relative;
+}
+
+nav ul li a{
+    color:black;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+}
+
+nav ul li a:hover{
+    background:rgba(255,255,255,0.2);
+    color:rgb(5,252,5);
+    padding:8px 15px;
+    border-radius:6px;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:blue;
+    transition:.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+.active{
+    color:blue;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    padding:40px;
+    border-bottom:1px solid #ccc;
+}
+
+.hero img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border:1px solid #999;
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.botones{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    font-weight:bold;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    background:#43b316;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#218838;
+    transform:translateY(-2px);
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+/* ==========================
+   BOTÓN WHATSAPP
+========================== */
+
+.btn-whatsapp{
+    display:block;
+    width:90%;
+    background:#25D366;
+    color:white;
+    padding:14px 30px;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+    text-align:center;
+    margin-top:15px;
+    transition:.3s;
+}
+
+.btn-whatsapp:hover{
+    background:#1ebe5d;
+}
+/* ==========================
+   RECETAS
+========================== */
+
+.titulo{
+    text-align:center;
+    padding:25px;
+    font-size:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    padding:20px 40px 50px;
+}
+
+.card{
+    border:1px solid #ccc;
+    text-align:center;
+    border-radius:8px;
+    overflow:hidden;
+    background:#fff;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:20px;
+}
+
+/* ==========================
+   ARTÍCULOS
+========================== */
+
+.info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    padding:40px;
+    border-top:1px solid #ddd;
+}
+
+.articulo{
+    display:flex;
+    align-items:flex-start;
+    margin-bottom:25px;
+}
+
+.articulo img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    margin-right:20px;
+    border-radius:5px;
+}
+
+.consejo{
+    text-align:center;
+}
+
+.consejo img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+/* ==========================
+   NEWSLETTER
+========================== */
+
+.newsletter{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:40px;
+    border-top:1px solid #ddd;
+}
+
+.newsletter input{
+    width:400px;
+    padding:15px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    background:#222;
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    padding:40px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin-bottom:10px;
+}
+
+.copy{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:992px){
+
+    .container{
+        width:95%;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+    .newsletter{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .newsletter input{
+        width:100%;
+    }
+
+    footer{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* ==========================
+   CELULAR
+========================== */
+
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .botones{
+        flex-direction:column;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+        padding:20px;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+        padding:20px;
+    }
+
+    .articulo{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .articulo img{
+        width:100%;
+        height:200px;
+        margin:0 0 15px;
+    }
+
+    .newsletter{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
+    .newsletter input{
+        width:100%;
+    }
+
+    footer{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
+
+/* ==========================
+   MENÚ HAMBURGUESA
+========================== */
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        width:100%;
+    }
+
+    nav.active{
+        display:block;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Nutrición</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header>
+
+            <div class="logo">
+                🍃 NutriBlog
+            </div>
+
+            <!-- Menú hamburguesa -->
+            <div class="menu-toggle">
+                ☰
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="#" class="active">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="recetas.html">Recetas</a>
+                    </li>
+
+                    <li>
+                        <a href="sobrenosotros.html">Sobre Nosotros</a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">Contacto</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <img src="img/receta nutricional.png" alt="Receta saludable">
+
+            <div>
+
+                <h1>
+                    Bienvenido a tu Blog de Nutrición y Recetas Saludables
+                </h1>
+
+                <p>
+                    Encuentra recetas deliciosas y consejos para llevar un estilo
+                    de vida saludable.
+                </p>
+
+                <div class="botones">
+
+                    <button>
+                        Ver Recetas
+                    </button>
+
+                    <button>
+                        <a href="verda.html">
+                            Leer Artículo
+                        </a>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             RECETAS DESTACADAS
+        ========================== -->
+
+        <h2 class="titulo">
+            RECETAS DESTACADAS
+        </h2>
+
+        <section class="cards">
+                    <!-- Tarjeta 1 -->
+
+            <div class="card">
+
+                <img src="img/en salada de quinoa con vegetales.png"
+                     alt="Ensalada de Quinoa">
+
+                <h3>
+                    Ensalada de Quinoa con Vegetales
+                </h3>
+
+                <button>
+                    Ver receta
+                </button>
+
+                <br><br>
+
+            </div>
+
+            <!-- Tarjeta 2 -->
+
+            <div class="card">
+
+                <img src="img/batido verda.png"
+                     alt="Batido Verde">
+
+                <h3>
+                    Batido Verde Energético
+                </h3>
+
+                <button>
+                    Ver receta
+                </button>
+
+                <br><br>
+
+            </div>
+
+            <!-- Tarjeta 3 -->
+
+            <div class="card">
+
+                <img src="img/avena con frutas y nuez.png"
+                     alt="Avena con Frutas">
+
+                <h3>
+                    Avena con Frutas y Nueces
+                </h3>
+
+                <button>
+                    Ver receta
+                </button>
+
+                <br><br>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             ARTÍCULOS
+        ========================== -->
+
+        <section class="info">
+
+            <div>
+
+                <h2>
+                    ARTÍCULOS RECIENTES
+                </h2>
+
+                <br>
+
+                <!-- Artículo 1 -->
+
+                <div class="articulo">
+
+                    <img src="img/beneficios.png"
+                         alt="Beneficios">
+
+                    <div>
+
+                        <h3>
+                            Beneficios de una alimentación saludable
+                        </h3>
+
+                        <p>
+                            Descubre por qué una alimentación equilibrada
+                            mejora tu salud y calidad de vida.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Artículo 2 -->
+
+                <div class="articulo">
+
+                    <img src="img/100 alimenros.png"
+                         alt="Proteínas">
+
+                    <div>
+
+                        <h3>
+                            10 alimentos ricos en proteínas
+                        </h3>
+
+                        <p>
+                            Los mejores alimentos para aumentar tu
+                            energía y masa muscular.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Artículo 3 -->
+
+                <div class="articulo">
+
+                    <img src="img/pensando.png"
+                         alt="Planificar comidas">
+
+                    <div>
+
+                        <h3>
+                            Cómo planificar tus comidas
+                        </h3>
+
+                        <p>
+                            Consejos prácticos para organizar tus
+                            comidas de forma saludable.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+                 CONSEJOS
+            ========================== -->
+
+            <div class="consejo">
+
+                <h2>
+                    CONSEJOS DE NUTRICIÓN
+                </h2>
+
+                <br>
+
+                <img src="img/consejo nutricion.png"
+                     alt="Consejo de Nutrición">
+
+                <p>
+                    Mantener una dieta balanceada es la clave para una vida
+                    saludable y llena de energía.
+                </p>
+
+            </div>
+
+        </section>
+                <!-- =========================
+             NEWSLETTER
+        ========================== -->
+
+        <section class="newsletter">
+
+            <div>
+
+                <h2>
+                    SUSCRÍBETE AL BLOG
+                </h2>
+
+                <p>
+                    Recibe contenido exclusivo, recetas y consejos.
+                </p>
+
+            </div>
+
+            <div>
+
+                <a href="https://wa.me/51922087273?text=Deseo%20contenido%20exclusivo,%20recetas%20y%20consejos."
+                   class="btn-whatsapp">
+
+                    💬 Escribir por WhatsApp
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            <div>
+
+                <h3>🍃 NutriBlog</h3>
+
+            </div>
+
+            <div>
+
+                <h3>Enlaces</h3>
+
+                <ul>
+
+                    <li>Inicio</li>
+                    <li>Recetas</li>
+                    <li>Sobre Nosotros</li>
+                    <li>Contacto</li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h3>Síguenos</h3>
+
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Pinterest</p>
+                <p>YouTube</p>
+
+            </div>
+
+            <div>
+
+                <h3>Contacto</h3>
+
+                <p>correo@nutriblog.com</p>
+                <p>+52 123 456 7890</p>
+
+            </div>
+
+        </footer>
+
+        <!-- =========================
+             COPYRIGHT
+        ========================== -->
+
+        <div class="copy">
+
+            © 2024 Blog de Nutrición y Recetas Saludables.
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         MENÚ HAMBURGUESA
+    ========================== -->
+
+    <script>
+
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+
+        menuToggle.addEventListener("click", () => {
+
+            nav.classList.toggle("active");
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+</body>
+</html>

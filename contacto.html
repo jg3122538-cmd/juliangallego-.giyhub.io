@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - NutriBlog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f9f9f9;
+        }
+
+        /* --- SECCION CONTACTO --- */
+        .contacto {
+            padding: 80px 20px;
+        }
+
+        .container-contacto {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contacto h2 {
+            color: #28a745;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .contacto p.subtitulo {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        .contacto-grid {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* FORMULARIO */
+        .form-contacto {
+            flex: 1;
+            min-width: 350px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .form-contacto h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+
+     
+
+        /* INFO DE CONTACTO */
+        .info-contacto {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .info-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .info-item .icono {
+            font-size: 30px;
+            color: #28a745;
+        }
+
+        .info-item h4 {
+            color: #28a745;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: #555;
+        }
+        .btn-enviar{
+    display:block;
+    width:90%;
+    background:#25D366;
+    color:white;
+    padding:14px 30px;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+    text-align:center;
+    margin-top:15px;
+    transition:.3s;
+}
+
+.btn-enviar:hover{
+    background:#1ebe5d;
+    transform: translateY(-2px);
+}
+    </style>
+</head>
+<body>
+
+    <!-- SECCION CONTACTO -->
+    <section class="contacto">
+        <div class="container-contacto">
+            <h2>Contáctanos</h2>
+            <p class="subtitulo">¿Tienes una receta o duda? Escríbenos y te respondemos 💚</p>
+            
+            <div class="contacto-grid">
+                <!-- FORMULARIO -->
+                <form class="form-contacto">
+                    <h3>Envíanos un mensaje</h3>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+                    <div>
+                        <a href="https://wa.me/51922087273?text=Deseo%20contenido%20exclusivo,%20recetas%20y%20consejos."
+                   class="btn-enviar">
+                         
+                   ✉️ Eviar mensaje
+                
+                        </a>
+                    </div>
+                </form>
+
+                <!-- INFORMACION -->
+                <div class="info-contacto">
+                    <div class="info-item">
+                        <div class="icono">📧</div>
+                        <div>
+                            <h4>Correo</h4>
+                            <p>contacto@nutriblog.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icono">📱</div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+51 922 087 273</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icono">📍</div>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Ancash, Perú</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icono">⏰</div>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lun - Vie: 9am - 6pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+</body>
+</html>

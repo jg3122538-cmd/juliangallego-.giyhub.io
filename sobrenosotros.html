@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - NutriBlog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f9f9f9;
+        }
+
+        /* --- SECCION SOBRE NOSOTROS --- */
+        .sobre-nosotros {
+            padding: 80px 20px;
+        }
+
+        .container-sobre {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            flex-wrap: wrap;
+        }
+
+        .imagen-sobre {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .imagen-sobre img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .texto-sobre {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .texto-sobre h2 {
+            color: #28a745;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .texto-sobre h3 {
+            color: #333;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .texto-sobre p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        /* BOTON */
+        .btn {
+            display: inline-block;
+            background: #28a745;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        /* VALORES */
+        .valores {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .valor {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .valor:hover {
+            transform: translateY(-8px);
+        }
+
+        .valor .icono {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .valor h4 {
+            color: #28a745;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .valor p {
+            color: #666;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SOLO LA SECCION SOBRE NOSOTROS -->
+    <section class="sobre-nosotros">
+        <div class="container-sobre">
+            <div class="imagen-sobre">
+                <img src="img/equipo.png" alt="Equipo de NutriBlog cocinando">
+            </div>
+            <div class="texto-sobre">
+                <h2>Sobre Nosotros</h2>
+                <h3>Tu guía para una vida más sana y deliciosa 🥗</h3>
+                <p>
+                    En <strong>NutriBlog</strong> creemos que comer sano no tiene que ser aburrido ni complicado. 
+                    Nacimos con la misión de demostrar que se puede comer rico, rápido y cuidando tu salud.
+                </p>
+                <p>
+                    Somos un equipo de nutricionistas y cocineros apasionados. Cada receta que ves aquí 
+                    está probada, balanceada y pensada para personas reales con poco tiempo.
+                </p>
+                <a href="recetas.html" class="btn">Descubre nuestras recetas</a>
+            </div>
+        </div>
+
+        <!-- 3 VALORES -->
+        <div class="valores">
+            <div class="valor">
+                <div class="icono">🌱</div>
+                <h4>100% Natural</h4>
+                <p>Usamos ingredientes reales. Nada de ultraprocesados.</p>
+            </div>
+            <div class="valor">
+                <div class="icono">⚡</div>
+                <h4>Rápido y Fácil</h4>
+                <p>Recetas de 15 a 30 min para tu día a día.</p>
+            </div>
+            <div class="valor">
+                <div class="icono">❤️</div>
+                <h4>Hecho con Amor</h4>
+                <p>Pensado para cuidar tu salud y la de tu familia.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

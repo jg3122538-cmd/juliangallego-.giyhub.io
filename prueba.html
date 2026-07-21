@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog de Nutrición</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif
+}
+body{
+    background:#9beb83}
+    .container{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto;
+    background:#fff}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    border-bottom:1px solid #ccc;
+    position:relative
+}
+.logo{
+    font-size:30px;
+    font-weight:bold
+}
+    .menu-toggle{
+    display:none;
+    font-size:30px;
+    cursor:pointer
+}
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px
+}
+nav a{text-decoration:none;color:#000;position:relative}
+nav a.active{color:blue}nav a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:2px;background:blue;transition:.3s}nav a:hover::after{width:100%}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:30px}.hero img,.card img,.consejo img{width:100%;height:auto}
+.botones{display:flex;gap:15px;flex-wrap:wrap}button,.btn-whatsapp{background:#43b316;color:#fff;border:none;padding:12px 20px;border-radius:5px;text-decoration:none;display:inline-block}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:20px}.card{border:1px solid #ccc;text-align:center;padding-bottom:15px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:30px}.articulo{display:flex;gap:15px;margin-bottom:20px}.articulo img{width:90px;height:90px}
+.newsletter{display:flex;justify-content:space-between;align-items:center;padding:30px;border-top:1px solid #ddd}
+footer{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;background:#222;color:#fff;padding:30px}.copy{background:#111;color:#fff;text-align:center;padding:15px}
+@media(max-width:992px){.hero,.info{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+.menu-toggle{display:block}
+nav{display:none;position:absolute;top:70px;left:0;width:100%;background:#fff}
+nav.show{display:block}
+nav ul{flex-direction:column;padding:20px;text-align:center}
+header{flex-wrap:wrap}
+.cards{grid-template-columns:1fr}
+.newsletter{flex-direction:column;gap:20px}
+footer{grid-template-columns:1fr}
+.articulo{flex-direction:column;text-align:center}.articulo img{width:100%;height:auto}
+}
+</style></head>
+<body><div class="container">
+<header><div class="logo">🍃 NutriBlog</div><div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</div>
+<nav><ul><li><a class="active" href="#">Inicio</a></li><li><a href="recetas.html">Recetas</a></li><li><a href="#">Sobre Nosotros</a></li><li><a href="#">Contacto</a></li></ul></nav></header>
+<section class="hero"><img src="img/receta nutricional.png"><div><h1>Bienvenido a tu Blog de Nutrición y Recetas Saludables</h1><p>Encuentra recetas deliciosas y consejos para llevar un estilo de vida saludable.</p><div class="botones"><button>Ver Recetas</button><button onclick="location.href='verda.html'">Leer Artículo</button></div></div></section>
+<h2 style="text-align:center;padding:20px">RECETAS DESTACADAS</h2>
+<section class="cards">
+<div class="card"><img src="img/en salada de quinoa con vegetales.png"><h3>Ensalada de Quinoa</h3><button>Ver receta</button></div>
+<div class="card"><img src="img/batido verda.png"><h3>Batido Verde</h3><button>Ver receta</button></div>
+<div class="card"><img src="img/avena con frutas y nuez.png"><h3>Avena con Frutas</h3><button>Ver receta</button></div>
+</section>
+<section class="info"><div><h2>ARTÍCULOS RECIENTES</h2></div><div class="consejo"><h2>CONSEJOS</h2><img src="img/consejo nutricion.png"><p>Mantener una dieta balanceada es la clave.</p></div></section>
+<section class="newsletter"><div><h2>SUSCRÍBETE</h2></div><a class="btn-whatsapp" href="https://wa.me/51922087273">💬 WhatsApp</a></section>
+<footer><div>🍃 NutriBlog</div><div>Enlaces</div><div>Redes</div><div>Contacto</div></footer><div class="copy">©2024</div>
+</div></body></html>
